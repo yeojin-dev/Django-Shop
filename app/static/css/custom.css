@@ -84,3 +84,8 @@ body {
 .my_product_text {
     padding-right: 20px;
 }
+
+/** search **/
+.my_search_text {
+    padding-top: 20px;
+}

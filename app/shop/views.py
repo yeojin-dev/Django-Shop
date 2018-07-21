@@ -28,3 +28,17 @@ def all_products_by_category(request, category_slug=None):
     }
 
     return render(request, 'shop/category.html', context)
+
+
+def product_detail(request, category_slug, product_slug):
+    product = get_object_or_404(
+        Product,
+        category__slug=category_slug,
+        slug=product_slug,
+    )
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'shop/product.html', context)

@@ -16,34 +16,36 @@
 {% endblock %}
 {% block content %}
     {% if category %}
-        <div>
-            <div>
+        <div class="row my_row_class">
+            <div class="mx-auto">
                 <p><a href="{% url 'shop:all_products' %}">Our Product Collection</a> | {{ category.name }}</p>
             </div>
         </div>
     {% endif %}
-    <div>
+    <div class="mx-auto">
     {% if category %}
-        <img src="{{ category.image.url }}" alt="{{ category.name }}">
+        <img class="my_image" src="{{ category.image.url }}" alt="{{ category.name }}">
     </div>
     <br>
     <div>
-        <h1>{{ category.name }}</h1>
-        <p>{{ category.description }}</p>
+        <h1 class="text-center my_title">{{ category.name }}</h1>
+        <p class="text-justify">{{ category.description }}</p>
     </div>
     {% else %}
     <div>
-        <img src="{% static 'img/banner.jpg' %}" alt="Our Products Collection">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iste excepturi, distinctio atque culpa corporis aspernatur molestias quasi nobis voluptates animi aliquid sint, ullam, accusantium fuga ducimus temporibus praesentium esse neque ut nesciunt veniam. Quas, dolor aliquid, molestias facilis quod deleniti distinctio ipsum natus illum sunt labore vel! Odio, iure!</p>
+        <img class="my_image my_image_padding" src="{% static 'img/banner.jpg' %}" alt="Our Products Collection">
+        <br>
+        <h1 class="text-center my_title">Our Products Collection</h1>
+        <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate iste excepturi, distinctio atque culpa corporis aspernatur molestias quasi nobis voluptates animi aliquid sint, ullam, accusantium fuga ducimus temporibus praesentium esse neque ut nesciunt veniam. Quas, dolor aliquid, molestias facilis quod deleniti distinctio ipsum natus illum sunt labore vel! Odio, iure!</p>
     </div>
     {% endif %}
-    <div>
-        <div>
+    <div class="container">
+        <div class="row mx-auto">
             {% for product in products %}
-            <div>
-                <div>
-                    <a href="{{ product.get_url }}"><img src="{{ product.image.url }}" alt="{{ product.name }}"></a>
-                    <div>
+            <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
+                <div class="card text-center" style="min-width: 18rem;">
+                    <a href="{{ product.get_url }}"><img class="card-img-top my_image" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                    <div class="card-body">
                         <h4>{{ product.name }}</h4>
                         <p>{{ Product.price }} won</p>
                     </div>

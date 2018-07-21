@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 
 from .models import Cart, CartItem
@@ -47,3 +47,33 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
     }
 
     return render(request, 'cart.html', context)
+
+
+def remove_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    cart_item = CartItem.objects.get(
+        product=product,
+        cart=cart,
+    )
+
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
+
+    return redirect('cart:cart_detail')
+
+
+def full_remove_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    cart = Cart.objects.get(cart_id=_cart_id(request))
+    cart_item = CartItem.objects.get(
+        product=product,
+        cart=cart,
+    )
+
+    cart_item.delete()
+
+    return redirect('cart:cart_detail')

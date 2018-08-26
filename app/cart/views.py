@@ -1,5 +1,8 @@
+import stripe
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
+from django.conf import settings
 
 from .models import Cart, CartItem
 from shop.models import Product
@@ -40,10 +43,35 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
     except ObjectDoesNotExist:
         pass
 
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    stripe_total = int(total * 100)
+    description = 'Perfect Cushion Shop - New Order'
+    data_key = settings.STRIPE_PUBLISHABLE_KEY
+
+    if request.method == 'POST':
+        try:
+            token = request.POST['stripeToken']
+            email = request.POST['stripeEmail']
+            customer = stripe.Customer.create(
+                email=email,
+                source=token,
+            )
+            charge = stripe.Charge.create(
+                amount=stripe_total,
+                currency='gbp',
+                description=description,
+                customer=customer.id,
+            )
+        except stripe.error.CardError as e:
+            return False, e
+
     context = {
         'cart_items': cart_items,
         'total': total,
         'counter': counter,
+        'data_key': data_key,
+        'stripe_total': stripe_total,
+        'description': description,
     }
 
     return render(request, 'cart.html', context)

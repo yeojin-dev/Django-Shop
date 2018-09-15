@@ -103,6 +103,11 @@ body {
     background-color: #f8f9fa!important;
 }
 
+.custom_image {
+    width: 100px;
+    height: 100px;
+}
+
 .custom_a {
     text-decoration: none;
 }
@@ -114,4 +119,61 @@ body {
 
 .my_custom_button {
     margin-top: 5px;
+}
+
+/** stripe **/
+.stripe-button-el {
+    width: 100%!important;
+    display: block!important;
+    background-color: #868e96!important;
+    border: 0px!important;
+    background-image: none!important;
+}
+
+.stripe-button-el span {
+    display: block;
+    position: relative;
+    padding: 0px 12px;
+    height: 36px!important;
+    line-height: 36px!important;
+    font-family: 'Roboto', sans-serif!important;
+    font-size: 16px!important;
+    color: #fff!important;
+    background-image: none!important;
+    background: none!important;
+}
+
+.errorlist li {
+    color: red;
+    font-weight: bold;
+}
+
+.my_custom_div {
+    margin-bottom: 20px!important;
+}
+
+.my_top_navbar_div {
+    height: 60px;
+    line-height: 50px;
+}
+
+.my_custom_menu {
+    text-align: right!important;
+}
+.my_custom_menu ul li {
+    list-style: none;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: 12px;
+    padding-right: 20px;
+    display: inline;
+}
+.my_custom_menu ul li a {
+    text-decoration: none;
+    color: #000;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: 12px;
 }

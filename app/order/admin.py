@@ -31,6 +31,7 @@ class OrderItemAdmin(admin.TabularInline):
     ]
     can_delete = False
     max_num = 0
+    template = 'admin/order/tabular.html'
 
 
 @admin.register(Order)

@@ -26,7 +26,7 @@ class Order(models.Model):
     def __str__(self):
         return str(self.id)
 
-    
+
 class OrderItem(models.Model):
     product = models.CharField(max_length=250)
     quantity = models.IntegerField()

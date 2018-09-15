@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "288183d01b872d66c6b483139a147a87a7b2605257f8d09791a09dcdab209220"
+            "sha256": "8c6d125504383c7000e041c7583d5ce19f42cd66fec2b1a3de9f978fc6435118"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -37,6 +37,14 @@
             ],
             "index": "pypi",
             "version": "==2.1.1"
+        },
+        "django-crispy-forms": {
+            "hashes": [
+                "sha256:5952bab971110d0b86c278132dae0aa095beee8f723e625c3d3fa28888f1675f",
+                "sha256:705ededc554ad8736157c666681165fe22ead2dec0d5446d65fc9dd976a5a876"
+            ],
+            "index": "pypi",
+            "version": "==1.7.2"
         },
         "django-extensions": {
             "hashes": [
@@ -101,7 +109,7 @@
                 "sha256:63b52e3c866428a224f97cab011de738c36aec0185aa91cfacd418b5d58911d1",
                 "sha256:ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"
             ],
-            "markers": "python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.6' and python_version != '3.3.*' and python_version < '4' and python_version != '3.0.*'",
+            "markers": "python_version >= '3.0'",
             "version": "==2.19.1"
         },
         "six": {
@@ -113,18 +121,18 @@
         },
         "stripe": {
             "hashes": [
-                "sha256:506e26639bca77a8044425027003e4df0fb28fda7de385d71727e1bd00d4410d",
-                "sha256:ce8fc8af33e12d3d92b083b86952227e9af6854eaf6a044a7725ac543b0582f8"
+                "sha256:8f556bb9af0b0714753567b1ec8e31649bc9af96980333bffc903155db276c7f",
+                "sha256:984b45d3c56242f23a1f3ad5a43cdaf07353b924193dd97bf8bc30203d4f541b"
             ],
             "index": "pypi",
-            "version": "==2.6.0"
+            "version": "==2.8.1"
         },
         "urllib3": {
             "hashes": [
                 "sha256:a68ac5e15e76e7e5dd2b8f94007233e01effe3e50e8daddf69acfd81cb686baf",
                 "sha256:b5725a0bd4ba422ab0e66e89e030c806576753ea3ee08554382c14e685d117b5"
             ],
-            "markers": "python_version != '3.1.*' and python_version != '3.2.*' and python_version >= '2.6' and python_version != '3.3.*' and python_version < '4' and python_version != '3.0.*'",
+            "markers": "python_version != '3.3.*' and python_version != '3.1.*' and python_version != '3.2.*' and python_version < '4' and python_version != '3.0.*' and python_version >= '2.6'",
             "version": "==1.23"
         }
     },
@@ -142,7 +150,7 @@
                 "sha256:b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8",
                 "sha256:ec9ef8f4a9bc6f71eec99e1806bfa2de401650d996c59330782b89a5555c1497"
             ],
-            "markers": "python_version != '3.2.*' and python_version != '3.0.*' and python_version != '3.3.*' and python_version != '3.1.*' and python_version >= '2.7'",
+            "markers": "python_version != '3.3.*' and python_version != '3.2.*' and python_version >= '2.7' and python_version != '3.0.*' and python_version != '3.1.*'",
             "version": "==4.3.4"
         },
         "lazy-object-proxy": {

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'search_app',
     'cart',
     'order',
+    'crispy_forms',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -139,3 +140,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 # Sample Stripe Key
 STRIPE_PUBLISHABLE_KEY = 'pk_test_uVjWirKQTiub8gOEIpl7Z7EF'
 STRIPE_SECRET_KEY = '< STRIPE_SECRET_KEY >'
+
+CRISPY_TEMPLATES_PACK = 'bootstrap4'

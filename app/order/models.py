@@ -9,7 +9,7 @@ class Order(models.Model):
 
     billing_name = models.CharField(max_length=250, blank=True)
     billing_address = models.CharField(max_length=250, blank=True)
-    bllling_city = models.CharField(max_length=250, blank=True)
+    billing_city = models.CharField(max_length=250, blank=True)
     billing_postcode = models.CharField(max_length=10, blank=True)
     billing_country = models.CharField(max_length=200, blank=True)
 
